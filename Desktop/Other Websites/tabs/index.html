@@ -1,0 +1,91 @@
+<html>
+<head>
+        <title>Networks</title>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <link rel = "stylesheet" href = "styles.css">
+</head>
+<body>
+                               
+                                <div id = "menu">
+                                                <div id = "button">
+                                                                <div class = "bar"></div>
+                                                                <div class = "bar"></div>
+                                                                <div class = "bar"></div>
+                                                </div>
+                                                <div id = "slidemenu">
+                                                                <ul>
+                                                                                <li><a href = "index.html">The Internet</a></li>
+                                                                                <li><a href = "software.html">Software</a></li>
+                                                                                <li><a href = "url.html">URLs and Protocols</a></li>
+                                                                                <li><a href = "html.html">HTML</a></li>
+                                                                </ul>
+                                                </div>
+                                </div>
+ 
+        <header id="top-header">
+            <h1>Networks</h1>
+        </header>
+ 
+        <div class="main-container">
+            <div class="content-row">
+                <nav class="sidenav">
+                    <ul>
+                        <li><span data-target = "1">Networks</span></li>
+                        <li><span data-target = "2">LAN</span></li>
+                        <li><span data-target = "3">WAN</span></li>
+                    </ul>
+                </nav>
+              <div class="content-area">
+                  <section id = "1">
+                      <header><h2>What is a Network?</h2></header>
+                      <p>A network is any set of computers or devices connected together for the purpose of sharing resources. They can be used to share resources such as files or devices like printers or, most commonly, the internet.</p>
+                  </section>
+                  <section id = "2">
+                      <header><h2>Local Area Networks (LAN)</h2></header>
+                    <p>This is a group of computers connected together, usually with cabelling or radio transmitters (though cables are faster), to form a network. They are usually close together and are commonly used within the same building. They have several advantages which are:</p>
+                    <ul>
+                        <li>Users can access the same files no matter what computer they are on</li>
+                        <li>Messages can be sent between terminals</li>
+                        <li>A moderator can monitor the usage of individual users</li>
+                    </ul>
+                    <p>However they also have a few disadvantages such as:</p>
+                    <ul>
+                        <li>Virus' can spread easily</li>
+                        <li>Wiring is expensive to initially buy and install</li>
+                        <li>They are prone to hacking</li>
+                    </ul>
+                  </section>
+                                                                  <section id = "3">
+                      <header><h2>Wide Area Networks (WAN)</h2></header>
+                    <p>These are similar to LANs but are spread over a much bigger are to connect computers in different countries for example. They use global communications systems such as satelites in order to connect devices which are very far away from each other.</p>
+                  </section>
+
+              </div>
+            </div>
+            <footer>
+                <p>CS Notes</p>
+            </footer>
+        </div>
+                               
+        <script>
+            var clickCount = 0;
+            $("#button").click(function(){
+                if (clickCount % 2 == 0){
+                                $("#slidemenu").css("left", "0");
+                }
+                else{
+                                $("#slidemenu").css("left", "-180px");
+                }
+                clickCount += 1;
+            });
+
+            $("nav span").click(function() {     
+                $("html, body").animate({
+
+                    scrollTop: $("#" + $(this).attr("data-target")).offset().top 
+                }, 500);
+            });
+</script>
+    </body>
+</html>

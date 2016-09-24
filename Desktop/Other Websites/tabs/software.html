@@ -1,0 +1,99 @@
+<html>
+<head>
+        <title>Software</title>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <link rel = "stylesheet" href = "styles.css">
+</head>
+<body>
+                               
+                                <div id = "menu">
+                                                <div id = "button">
+                                                                <div class = "bar"></div>
+                                                                <div class = "bar"></div>
+                                                                <div class = "bar"></div>
+                                                </div>
+                                                <div id = "slidemenu">
+                                                                <ul>
+                                                                                <li><a href = "index.html">The Internet</a></li>
+                                                                                <li><a href = "software.html">Software</a></li>
+                                                                                <li><a href = "url.html">URLs and Protocols</a></li>
+                                                                                <li><a href = "html.html">HTML</a></li>
+                                                                </ul>
+                                                </div>
+                                </div>
+ 
+        <header id="top-header">
+            <h1>Software</h1>
+        </header>
+ 
+        <div class="main-container">
+            <div class="content-row">
+                <nav class="sidenav">
+                    <ul>
+                        <li><span data-target = "1">Acronyms</span></li>
+                        <li><span data-target = "2">ISPs</span></li>
+                        <li><span data-target = "3">IPs</span></li>
+                        <li><span data-target = "4">MAC Addresses</span></li>
+                        <li><span data-target = "6">Cookies</span></li>
+                    </ul>
+                </nav>
+              <div class="content-area">
+                  <section id = "1">
+                      <header><h2>Important Acronyms</h2></header>
+                      <ul>
+                        <li>ISP - Internet Service Provider</li>
+                        <li>IP - Internet Protocol Address</li>
+                        <li>MAC - Media Access Control</li>
+                        <li>HTML - HyperText Markup Language</li>
+                        <li>HTTP - HyperText Transfer Protocol</li>
+                        <li>HTTPS - HyperText Transfer Protocol Secure</li>
+                        <li>URL - Uniform Resource Locator</li>
+                    </ul>
+                  </section>
+                  <section id = "2">
+                      <header><h2>Internet Service Providers (ISPs)</h2></header>
+                    <p>These are internet service providers. They give the user access to the internet to allow him to connect to the network.</p>
+                  </section>
+                                                                  <section id = "3">
+                      <header><h2>IP Addresses</h2></header>
+                    <p>An Internet Protocol Address is a numberical ID for each device online. Every computer, server, domain and router has a unique IP address. It consists of four three-digit numbers seperated by dots, making it 4 bytes in size. For example, 192.053.110.004 is an example of an IP address.</p>
+                  </section>
+                                                                  <section id = "4">
+                      <header><h2>MAC Addresses</h2></header>
+                    <p>A Media Access Control address is a numerical ID for a device which allows you to connect to the internet. It is stored in the network interfact card of each device. It is represented as a set of 6 hexadecimal numbers, for example FE-32-11-0A-A7-09.</p>
+                  </section>
+
+                  <section id = "6">
+                      <header><h2>Cookies</h2></header>
+                    <p>Cookies are small text files stored on computers when a site is opened. They record things like passwords, logins, credit card numbers etc.</p>
+
+                  </section>
+              </div>
+            </div>
+            <footer>
+                <p>CS Notes</p>
+            </footer>
+        </div>
+                               
+        <script>
+            var clickCount = 0;
+            $("#button").click(function(){
+                if (clickCount % 2 == 0){
+                                $("#slidemenu").css("left", "0");
+                }
+                else{
+                                $("#slidemenu").css("left", "-180px");
+                }
+                clickCount += 1;
+            });
+
+            $("nav span").click(function() {     
+                $("html, body").animate({
+
+                    scrollTop: $("#" + $(this).attr("data-target")).offset().top 
+                }, 500);
+            });
+</script>
+    </body>
+</html>

@@ -1,0 +1,77 @@
+<html>
+<head>
+        <title>URLs and Protocols</title>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <link rel = "stylesheet" href = "styles.css">
+</head>
+<body>
+                               
+                                <div id = "menu">
+                                                <div id = "button">
+                                                                <div class = "bar"></div>
+                                                                <div class = "bar"></div>
+                                                                <div class = "bar"></div>
+                                                </div>
+                                                <div id = "slidemenu">
+                                                                <ul>
+                                                                                <li><a href = "index.html">The Internet</a></li>
+                                                                                <li><a href = "software.html">Software</a></li>
+                                                                                <li><a href = "url.html">URLs and Protocols</a></li>
+                                                                                <li><a href = "html.html">HTML</a></li>
+                                                                </ul>
+                                                </div>
+                                </div>
+ 
+        <header id="top-header">
+            <h1>URLs and Protocols</h1>
+        </header>
+ 
+        <div class="main-container">
+            <div class="content-row">
+                <nav class="sidenav">
+                    <ul>
+                        <li><span data-target = "1">Protocols</span></li>
+                        <li><span data-target = "2">URLs</span></li>
+                    </ul>
+                </nav>
+              <div class="content-area">
+                  <section id = "1">
+                      <header><h2>Protocols</h2></header>
+                    <p>Protocols are things that are agreed on between to devices so that they can communicate to each other. Setting up one is known as a handshake. They define everything a computer needs to communicate, like file format, error checking methods, data compression and through what medium data will be transferred.</p>
+                    <p>HTTP is a protocol that defines how messages are transmitted and formatted over the internet.</p>
+                    <p>An extension to HTTP is HTTPs, which adds an extra layer of security through SSL encryption. This means communications are more difficult to be read by intermediaries as the data is encrypted.</p>
+                  </section>
+                  <section id = "2">
+                      <header><h2>URLs</h2></header>
+                    <p>URLs are a way to find web content using english phrases. They represent a websites IP address. The three main parts of it are: the protocol of the website (HTTP(s)), the domain name, the type of website (.com, .sg etc.) and the file name.</p>
+                  </section>
+
+              </div>
+            </div>
+            <footer>
+                <p>CS Notes</p>
+            </footer>
+        </div>
+                               
+        <script>
+            var clickCount = 0;
+            $("#button").click(function(){
+                if (clickCount % 2 == 0){
+                                $("#slidemenu").css("left", "0");
+                }
+                else{
+                                $("#slidemenu").css("left", "-180px");
+                }
+                clickCount += 1;
+            });
+
+            $("nav span").click(function() {     
+                $("html, body").animate({
+
+                    scrollTop: $("#" + $(this).attr("data-target")).offset().top 
+                }, 500);
+            });
+</script>
+    </body>
+</html>
